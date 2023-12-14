@@ -1879,4 +1879,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+	
+	.about-text p {
+  white-space: nowrap; /* Prevent line breaks within the paragraph */
+}
 }
