@@ -505,12 +505,7 @@ main {
 }
 
 .about-text p { margin-bottom: 15px; }
-.about-text p {
-  white-space: nowrap; /* Prevent line breaks within the paragraph */
-}
-.about-text a {
-  color: #ff0000; /* Change this to the desired color using a valid color code */
-}
+
 	
 
 
