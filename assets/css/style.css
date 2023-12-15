@@ -827,7 +827,15 @@ main {
   line-height: 1.6;
 }
 
+.authors {
+    font-style: italic;
+    color: white; /* Adjust the color as needed */
+}
 
+.journal {
+    font-weight: bold;
+	color: white;
+}
 /*-----------------------------------*\
   #RESUME
 \*-----------------------------------*/
