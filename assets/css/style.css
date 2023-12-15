@@ -131,7 +131,7 @@ a { text-decoration: none;
 
 li { list-style: none; }
 
-a_about {
+.a_about {
     display: INLINE;
 }
 
