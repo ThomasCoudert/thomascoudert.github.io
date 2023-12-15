@@ -509,11 +509,13 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
-.about-text {
-    text-align: center; /* Center-align the content within the section */
-  }
+
 .about-text p { margin-bottom: 15px; }
 
+.center-image {
+    display: block; /* Make the container a block element to center its content */
+    margin: 0 auto; /* Set left and right margin to auto for horizontal centering */
+  }
 	
 
 
