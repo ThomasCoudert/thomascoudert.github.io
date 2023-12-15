@@ -173,7 +173,6 @@ article {
   padding: 15px;
   box-shadow: var(--shadow-1);
   z-index: 1;
-  width: 1000px; /* Adjust the width to your preference */	
 }
 
 .separator {
