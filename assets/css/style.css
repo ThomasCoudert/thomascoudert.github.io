@@ -514,8 +514,9 @@ main {
 
 .center-image {
     display: block; /* Make the container a block element to center its content */
-    margin: 0 auto; /* Set left and right margin to auto for horizontal centering */
-  }
+margin-left: auto;
+    margin-right: auto;  
+}
 	
 
 
