@@ -771,7 +771,7 @@ main {
 		     color: white; /* Set the text color to white */
 }
 
-.paper.title-wrapper {
+.research-papers .title-wrapper {
   display: flex;
   align-items: center;
   gap: 15px;
