@@ -509,7 +509,9 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
-
+.about-text {
+    text-align: center; /* Center-align the content within the section */
+  }
 .about-text p { margin-bottom: 15px; }
 
 	
