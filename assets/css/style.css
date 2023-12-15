@@ -131,6 +131,10 @@ a { text-decoration: none;
 
 li { list-style: none; }
 
+a_about {
+    display: INLINE;
+}
+
 img, ion-icon, a, button, time, span { display: block; }
 
 img {max-width: 100%;
