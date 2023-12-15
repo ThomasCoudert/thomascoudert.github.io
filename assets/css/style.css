@@ -789,8 +789,9 @@ main {
 
 .paper-title {
   font-size: var(--fs-6);
-  line-height: 1.3;
+  line-height: 1.1;
   margin-bottom: 7px;
+  color: var(--light-gray);
 }
 
 .paper-list span {
@@ -829,7 +830,7 @@ main {
 
 .authors {
     font-style: italic;
-    color: white; /* Adjust the color as needed */
+    color: var(--light-gray); /* Adjust the color as needed */
 }
 
 .journal {
