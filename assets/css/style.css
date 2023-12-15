@@ -1480,14 +1480,19 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #PORTFOLIO, BLOG
+   * #PUBLICATIONS
    */
 
-  .project-img, .blog-banner-box { border-radius: 16px; }
+  .paper-list { margin-left: 65px; }
 
-  .blog-posts-list { gap: 30px; }
+  .paper-item:not(:last-child)::before { left: -40px; }
 
-  .blog-content { padding: 25px; }
+  .paper-item::after {
+    height: 8px;
+    width: 8px;
+    left: -43px;
+  }
+
 
 
 
