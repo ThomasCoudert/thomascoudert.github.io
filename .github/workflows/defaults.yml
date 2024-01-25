@@ -1,0 +1,4 @@
+defaults:
+  run:
+    using: 'node'
+    version: '20'
