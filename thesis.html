@@ -209,17 +209,16 @@
                     <section class="project">
                         <h3 class="h3">Dynamic myocardial blood volume mapping with MR Multitasking</h3>
                         <p>
-                            In my current postdoctoral work at UCLA, I am developing a dynamic framework for
-                            <u>fractional myocardial blood volume (fMBV)</u> mapping using an MR Multitasking sequence
-                            and ferumoxytol as an intravascular contrast agent. Multitasking acquires highly
-                            undersampled data and reconstructs a low-rank latent subspace that resolves
-                            <u>cardiac phase</u>, <u>respiratory motion</u>, and <u>contrast dynamics</u> simultaneously.
+                            This project focuses on developing a fully motion-resolved framework for quantifying myocardial fractional blood volume (fMBV) using MR Multitasking in conjunction with ferumoxytol, an intravascular contrast agent. 
+                            The Multitasking acquisition produces a highly undersampled dataset that is reconstructed through a low-rank subspace model, yielding separate dimensions for cardiac motion, respiratory motion, and contrast-driven T1 dynamics. 
+                            Within this latent space, motion-resolved T1 maps are generated across the entire cardiac cycle and across multiple ferumoxytol doses. Subsequently, a compartmental model is fitted to the multi-dose T1 evolution to estimate fMBV and associated water-exchange parameters. 
+                            
                         </p>
                         <p>
-                            My goal is to obtain motion-resolved T1 maps across the cardiac cycle and multiple
-                            ferumoxytol doses, then fit a biophysical model to derive dynamic fMBV maps.
+                            Central to this work are the optimization of the Multitasking sequence for ferumoxytol studies, the stabilization of cross-dose and cross-phase alignment within the subspace, and the construction of a pipeline capable of producing dynamic, physiologically interpretable fMBV maps without reliance 
+                            on ECG gating or breath-holding. This framework aims to improve the characterization of myocardial microvascular function and provide a more robust approach to contrast-enhanced quantitative cardiac MRI.
                         </p>
-                        <!-- <div class="center-image project-figure">
+                        <div class="center-image project-figure">
                             <!-- Replace src, alt and figcaption when you have the final figure -->
                             <figure>
                                 <img src="./assets/images/fmbv_multitasking_placeholder.png"
@@ -229,7 +228,7 @@
                                     (acquisition, motion-resolved T1 mapping, and fMBV fitting).
                                 </figcaption>
                             </figure>
-                        </div> -->
+                        </div>
                     </section>
 
                     <hr class="separator">
@@ -237,28 +236,26 @@
                     <section class="project">
                         <h3 class="h3">Contrast-free multi-quantitative MRI with MR Fingerprinting (PhD project)</h3>
                         <p>
-                            My PhD work focused on the development of new <u>MR Fingerprinting (MRF)</u> methods for
-                            fast multi-parametric and contrast-free quantitative imaging.
+                            The concept of MRF proposes to reconstruct images by directly comparing in vivo acquisitions and millions of digital simulations that mimic brain tissue (dictionary). 
+                            This approach is flexible enough to allow access to several MRI parameters simultaneously and to quantify them. As shown in clinical and preclinical studies, 
+                            when the simulations are based on the physics of <u>NMR</u> (magnetic field, magnetic susceptibility, diffusion, relaxations, etc.) and on biophysics (cellular dimensions and vascular, flow ...), the technique allows the extraction of information on tissue microstructures. 
+                            These data are essential for the management of patients with <u>acute stroke</u>. Until now, the digital representation of tissues has been based on simple shapes (cells = spheres, blood vessels = cylinders) and the simulation step is time-consuming. 
+                            In addition, the choice of the 4D sequence is currently based on rough nuclear magnetization trajectories and the comparison step is extremely computer expansive and also time-consuming. 
+                            Finally, the actual measurements of <u>perfusion and oxygenation parameters</u> are constrained by contrast agent injection.
                         </p>
                         <p>
-                            The core idea was to directly match in vivo MRF signals to a large
-                            <u>dictionary of numerical simulations</u> that incorporate realistic NMR physics
-                            (field inhomogeneity, susceptibility, diffusion, relaxation) and biophysical features
-                            (cellular and vascular microstructure, flow). I worked on:
+                            This project is centered on the development of a contrast-free MR Fingerprinting (MRF) framework for rapid, multidimensional quantitative brain imaging in the context of cerebrovascular diseases. 
+                            The method relies on matching measured MRF signal evolutions to a comprehensive dictionary of simulations that incorporate detailed NMR physics—including relaxation as well as realistic microvascular and cellular architectural features. 
+                            By generating high-fidelity digital phantoms of brain tissue and accelerating large-scale reconstruction through advanced dictionary compression or physic-informed neural network, the project enabled the extraction of relaxation, perfusion, and oxygenation biomarkers without the need for exogenous contrast agents. 
+                            The resulting framework provides quantitative parameters with direct links to tissue microstructure and hemodynamics, offering a non-invasive alternative for assessing neurovascular conditions such as acute stroke.
                         </p>
-                        <ul>
-                            <li>Designing efficient MRF acquisition schemes for multi-parametric brain imaging.</li>
-                            <li>Building realistic digital phantoms of brain microvascular tissue.</li>
-                            <li>Accelerating large-scale MRF simulations and dictionary compression with AI tools.</li>
-                            <li>Extracting <u>relaxation, perfusion, and oxygenation</u> parameters <u>without contrast injection</u>.</li>
-                        </ul>
                         <p>
                             This framework targets quantitative biomarkers for <u>acute stroke</u> and other
                             neurovascular diseases by linking the MRF signal evolution to underlying tissue
                             microstructure and hemodynamics.
                         </p>
 
-                        <!-- <div class="center-image project-figure">
+                        <div class="center-image project-figure">
                             <!-- Replace src, alt and figcaption when you have the final figure -->
                             <figure>
                                 <img src="./assets/images/mrf_framework_placeholder.png"
@@ -268,7 +265,7 @@
                                     MRF sequence design, dictionary simulations, and parameter map reconstruction.
                                 </figcaption>
                             </figure>
-                        </div> -->
+                        </div>
                     </section>
 
                     <hr class="separator">
@@ -276,28 +273,13 @@
                     <section class="project">
                         <h3 class="h3">Fast MR signal simulations of microvascular and diffusion contributions using histogram-based approximation and recurrent neural networks</h3>
                         <p>
-                            In parallel with my MRF work, I developed the <u>MR-WAVES</u> framework, which uses
-                            recurrent neural networks (RNNs) to predict MR signals from realistic 3D microvascular
-                            geometries incorporating water-diffusion modelling. Classical Monte Carlo simulations of spin dynamics in complex vasculature
-                            are accurate but computationally expensive, limiting their use for large-scale sequence
-                            optimization or parameter fitting.
+                           MR-WAVES is a computational framework designed to replace traditional Monte-Carlo spin-dynamics simulations with a recurrent neural network model capable of predicting MR signal evolutions in realistic three-dimensional microvascular geometries. 
+                            Conventional simulations, while accurate, are computationally intensive and limit the exploration of diverse sequence designs or microvascular configurations. 
+                            MR-WAVES leverages simulated datasets to train an RNN that learns the temporal evolution of magnetization under varying gradient waveforms, structural geometries, and biophysical conditions. Once trained, the model provides rapid and highly scalable signal predictions, 
+                            enabling efficient sequence optimization and facilitating large-scale studies on how microvascular architecture influences measurable MRI contrast. 
+                            This framework offers a practical and interpretable surrogate for complex microvascular physics, bridging detailed biophysical modeling with modern machine-learning-based signal prediction.
                         </p>
-                        <p>
-                            MR-WAVES addresses this by:
-                        </p>
-                        <ul>
-                            <li>Generating realistic microvascular networks and associated biophysical parameters.</li>
-                            <li>Simulating reference MR signals under various gradient waveforms and sequence settings.</li>
-                            <li>Training RNN-based surrogate models to learn the temporal evolution of the MR signal.</li>
-                            <li>Enabling fast prediction of MR signals for new sequence designs and microvascular scenarios.</li>
-                        </ul>
-                        <p>
-                            This approach makes it possible to explore large spaces of sequence parameters and tissue
-                            properties, and to link microvascular architecture to measurable MR contrasts in a
-                            computationally tractable way.
-                        </p>
-
-                        <!-- <div class="center-image project-figure">
+                        <div class="center-image project-figure">
                             <!-- Replace src, alt and figcaption when you have the final figure -->
                             <figure>
                                 <img src="./assets/images/mrwaves_placeholder.png"
@@ -307,7 +289,7 @@
                                     waveform to fast RNN-based MR signal prediction.
                                 </figcaption>
                             </figure>
-                        </div> -->
+                        </div>
                     </section>
 
                 </section>
