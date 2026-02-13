@@ -166,7 +166,7 @@ input, textarea {
 
 html { font-family: var(--ff-poppins); }
 
-body { background: var(--smoky-black); }
+body { background: var(--bg-gradient-onyx); }
 
 
 
@@ -1779,7 +1779,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   body::-webkit-scrollbar { width: 20px; }
 
-  body::-webkit-scrollbar-track { background: var(--smoky-black); }
+  body::-webkit-scrollbar-track { background: var(--bg-gradient-onyx); }
+
 
   body::-webkit-scrollbar-thumb {
     border: 5px solid var(--smoky-black);
