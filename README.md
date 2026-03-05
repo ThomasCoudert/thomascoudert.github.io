@@ -1,2 +1,3 @@
 # thomascoudert.github.io
-Personal portofolio
+Personal portofolio of Dr. Thomas Coudert
+
