@@ -1,8 +1,11 @@
 'use strict';
 
-// Clear old theme key from previous site version to avoid stale dark mode
-if (localStorage.getItem('theme') !== null && localStorage.getItem('tc-theme') === null) {
+// Reset theme on major site version bump — ensures light is default after redesign
+const SITE_VERSION = '2';
+if (localStorage.getItem('tc-site-version') !== SITE_VERSION) {
+  localStorage.removeItem('tc-theme');
   localStorage.removeItem('theme');
+  localStorage.setItem('tc-site-version', SITE_VERSION);
 }
 
 // === THEME TOGGLE ===
