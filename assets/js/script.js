@@ -1,58 +1,82 @@
 'use strict';
 
+// === THEME TOGGLE ===
+const themeBtn = document.getElementById('themeToggle');
+const themeIcon = themeBtn ? themeBtn.querySelector('.theme-icon') : null;
 
+function applyTheme(dark) {
+  document.body.classList.toggle('dark', dark);
+  if (themeIcon) themeIcon.textContent = dark ? '☀️' : '🌙';
+}
 
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+const savedTheme = localStorage.getItem('theme');
+applyTheme(savedTheme === 'dark');
 
-
-
-// sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark');
+    if (themeIcon) themeIcon.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 }
 
+// === MOBILE MENU ===
+const mobileMenuBtn = document.getElementById('mobileMenu');
+const mobileNav = document.getElementById('mobileNav');
 
-
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
-    }
-
+if (mobileMenuBtn && mobileNav) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
   });
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => mobileNav.classList.remove('open'));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!mobileNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+      mobileNav.classList.remove('open');
+    }
+  });
+}
+
+// === SCROLL SPY: update active nav link as sections scroll into view ===
+const sections = document.querySelectorAll('.content-section[id]');
+const navLinks = document.querySelectorAll('.nav-link[data-section]');
+
+if (sections.length && navLinks.length) {
+  const scrollSpy = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.dataset.section === id);
+          });
+        }
+      });
+    },
+    { rootMargin: '-40% 0px -40% 0px' }
+  );
+
+  sections.forEach(s => scrollSpy.observe(s));
+}
+
+// === SCROLL REVEAL: fade in elements as they enter viewport ===
+const reveals = document.querySelectorAll('.reveal');
+
+if (reveals.length) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08 }
+  );
+
+  reveals.forEach(el => revealObserver.observe(el));
 }

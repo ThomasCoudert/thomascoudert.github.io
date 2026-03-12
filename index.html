@@ -1,295 +1,667 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta http-equiv="X-UA-Compatible" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thomas Coudert</title>
-
-    <!--
-      - favicon
-    -->
-    <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
-    <!--
-      - custom css link
-    -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-
-    <!--
-      - google font link
-    -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LXQLH66J4S"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-LXQLH66J4S');
-    </script>
-
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thomas Coudert</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LXQLH66J4S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LXQLH66J4S');
+  </script>
+  <!-- Prevent flash of wrong theme -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-pre');
+  </script>
+  <style>
+    html.dark-pre body { background: #000; }
+  </style>
 </head>
-
 <body>
 
-    <!--
-      - #MAIN
-    -->
+  <!-- ===== TOP NAV ===== -->
+  <header class="top-nav" id="topNav">
+    <div class="nav-inner">
+      <a href="#about" class="nav-brand">Thomas Coudert</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#about"        class="nav-link active" data-section="about">About</a></li>
+          <li><a href="#projects"     class="nav-link"        data-section="projects">Projects</a></li>
+          <li><a href="#resume"       class="nav-link"        data-section="resume">Resume</a></li>
+          <li><a href="#publications" class="nav-link"        data-section="publications">Publications</a></li>
+          <li><a href="#contact"      class="nav-link"        data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="mobile-menu-btn" id="mobileMenu" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-    <main>
+  <!-- Mobile nav dropdown -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#about"        class="mobile-nav-link">About</a></li>
+      <li><a href="#projects"     class="mobile-nav-link">Projects</a></li>
+      <li><a href="#resume"       class="mobile-nav-link">Resume</a></li>
+      <li><a href="#publications" class="mobile-nav-link">Publications</a></li>
+      <li><a href="#contact"      class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
 
-        <!--
-          - #SIDEBAR
-        -->
+  <!-- ===== PAGE LAYOUT ===== -->
+  <div class="layout">
 
-        <aside class="sidebar" data-sidebar>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="profile">
 
-            <div class="sidebar-info">
-
-                <figure class="avatar-box">
-                    <img src="./assets/images/depaulis.jpg" alt="Thomas Coudert" width=80px>
-                </figure>
-
-                <div class="info-content">
-                    <h1 class="name" title="Thomas Coudert">Thomas Coudert</h1>
-
-                    <p class="title">Postdoctoral Researcher, UCLA</p>
-                </div>
-
-                <button class="info_more-btn" data-sidebar-btn>
-                    <span>Show Contacts</span>
-
-                    <ion-icon name="chevron-down"></ion-icon>
-                </button>
-
-            </div>
-
-            <div class="sidebar-info_more">
-
-                <div class="separator"></div>
-
-                <ul class="contacts-list">
-
-                    <li class="contact-item">
-
-                        <div class="icon-box">
-                            <ion-icon name="mail-outline"></ion-icon>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Email</p>
-
-                            <a href="mailto:tcoudert@mednet.ucla.edu" class="contact-link">tcoudert@mednet.ucla.edu</a>
-                        </div>
-
-                    </li>
-
-                    <li class="contact-item">
-
-                        <div class="icon-box">
-                            <ion-icon name="calendar-outline"></ion-icon>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Birthday</p>
-
-                            <time datetime="1999-10-01">October 1, 1999</time>
-                        </div>
-
-                    </li>
-
-                    <li class="contact-item">
-
-                        <div class="icon-box">
-                            <ion-icon name="location-outline"></ion-icon>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Location</p>
-
-                            <address>Los Angeles, CA, USA</address>
-                        </div>
-
-                    </li>
-
-                </ul>
-
-                <div class="separator"></div>
-
-                <ul class="social-list">
-
-                    <li class="social-item">
-                        <a href="https://twitter.com/Thomas__Coudert" target="_blank" class="social-link">
-                            <img src="./assets/images/logo-X.png" alt="RG Logo" width="30">
-                        </a>
-                    </li>
-
-                    <li class="social-item">
-                        <a href="https://www.linkedin.com/in/thomas-coudert-phd-91b110193/" target="_blank" class="social-link">
-                            <img src="./assets/images/logo-linkedin.png" alt="RG Logo" width="25">
-                        </a>
-                    </li>
-                     <li class="social-item">
-                        <a href="https://github.com/ThomasCoudert" target="_blank" class="social-link">
-                            <img src="./assets/images/logo-github.png" alt="RG Logo" width="25">
-                        </a>
-                    </li>
-                    <li class="social-item">
-                        <a href="https://www.researchgate.net/profile/Thomas-Coudert-4" target="_blank" class="social-link">
-                            <img src="./assets/images/logo-RG.png" alt="RG Logo" width="25">
-                        </a>
-                    </li>
-                    <li class="social-item">
-                        <a href="https://scholar.google.com/citations?user=AKFU4gkAAAAJ&hl=fr&authuser=1&oi=ao" target="_blank" class="social-link">
-                            <img src="./assets/images/logo-GS.png" alt="GS Logo" width="25">
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-            <br>
-            <div class="sidebar-info">
-
-                <figure class="avatar-box">
-                    <img src="./assets/images/mybrain_zoom.png" alt="Thomas Coudert" width=80px>
-                </figure>
-            </div>
-        </aside>
-
-
-
-
-
-        <!--
-          - #main-content
-        -->
-
-        <div class="main-content">
-
-            <!--
-              - #NAVBAR
-            -->
-
-            <nav class="navbar">
-
-                <ul class="navbar-list">
-
-                    <li class="navbar-item">
-                        <a href="#" class="navbar-link active">About</a>
-                    </li>
-
-                    <li class="navbar-item">
-                        <a href="thesis.html" class="navbar-link">Projects</a>
-                    </li>
-                    
-                    <li class="navbar-item">
-                        <a href="resume.html" class="navbar-link">Resume</a>
-                    </li>
-                    
-                    <li class="navbar-item">
-                        <a href="publications.html" class="navbar-link">Publications</a>
-                    </li>
-
-                    <li class="navbar-item">
-                        <a href="contact.html" class="navbar-link">Contact</a>
-                    </li>
-
-                </ul>
-
-            </nav>
-
-
-            <!--
-              - #ABOUT
-            -->
-
-            <article class="about  active" data-page="about">
-
-                <header>
-                    <h2 class="h2 article-title">About me</h2>
-                </header>
-
-                <section class="about-text">
-                    <div class="center-image">
-                        <img src="./assets/images/mybrain.gif" alt="My Brain MRI" width="750">
-                        <p class="caption">"To understand me, start at slice 47."</p>
-                    </div>
-
-                     <p> I am a Postdoctoral Researcher working at the 
-                        <a class="a_about" href="https://www.uclahealth.org/locations/david-geffen-school-medicine-ucla"> 
-                            David Geffen School of Medicine at UCLA </a> 
-                        in Los Angeles, California, in the <a class="a_about" href="https://cvirl.dgsom.ucla.edu/"> Cardio Vascular Imaging Research Lab</a> 
-                        directed by Pr. Kim-Lien Nguyen.</p>
-                    <div class="center-image">
-                        <img src="./assets/images/ucla_campus.jpg" alt="UCLA" width="500">
-                      </div> 
-                    <br>
-                    <p> I pursued my PhD research at the 
-                        <a class="a_about" href="https://neurosciences.univ-grenoble-alpes.fr/fr"> 
-                            Grenoble Institut Neurosciences </a> 
-                        in France, in the <a class="a_about" href="https://linktr.ee/nifm_gin"> Functional Neuroimaging and Brain Perfusion research team </a> 
-                        directed by Benjamin Lemasson and Thomas Christen.</p>
-                    
-                    <br>
-                    <div class="center-image">
-                        <img src="./assets/images/Grenoble.jpg" alt="Grenoble" width="500">
-                      </div> 
-                    <br>
-                      <p> Before my thesis, I worked as an intern under the supervision of 
-                          <a class="a_about" href="https://neurosciences.univ-grenoble-alpes.fr/fr/annuaire/m-michel-dojat-621497.kjsp"> Michel Dojat </a> and
-                          <a class="a_about" href="https://mistis.inrialpes.fr/people/forbes/"> Florence Forbes </a> on Transfer Learning for 
-                          automatic segmentation of radiation-induced brain lesions in glioblastoma patients in the case where the dataset contains a limited number of annotated MRIs. 
-                          This work also enabled me to work closely with the start-up <a class="a_about" href="https://pixyl.ai/"> Pixyl </a>, in the research and development of their 
-                          AI tools for MS lesion segmentation.
-                      </p>
-                    
- 
-                    <p> Outside of work, I practice sports such as Brazilian jiu-jitsu (BJJ) and basketball. 
-                        I like to go beyond my limits and renew myself in what I do. I find these notions in contact sports and satisfy my taste for teamwork through basketball. 
-                        I'm also a fan of science fiction novels which I've been reading more and more recently.
-                        Finally, I love spending time with family, friends, or colleagues, having a drink, or enjoying an outdoor activity.</p>
-                </section>
-
-
-
-            </article>
-
+        <div class="avatar-wrapper">
+          <img src="./assets/images/depaulis.jpg" alt="Thomas Coudert" class="avatar">
         </div>
 
+        <h1 class="profile-name">Thomas Coudert</h1>
+        <p class="profile-title">Postdoctoral Researcher, UCLA</p>
+
+        <div class="profile-divider"></div>
+
+        <div class="profile-contacts">
+          <a href="mailto:tcoudert@mednet.ucla.edu" class="contact-row">
+            <ion-icon name="mail-outline"></ion-icon>
+            <span>tcoudert@mednet.ucla.edu</span>
+          </a>
+          <div class="contact-row">
+            <ion-icon name="location-outline"></ion-icon>
+            <span>Los Angeles, CA, USA</span>
+          </div>
+          <div class="contact-row">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <span>October 1, 1999</span>
+          </div>
+        </div>
+
+        <div class="profile-divider"></div>
+
+        <div class="social-links">
+          <a href="https://twitter.com/Thomas__Coudert" target="_blank" class="social-btn" aria-label="Twitter/X">
+            <img src="./assets/images/logo-X.png" alt="X">
+          </a>
+          <a href="https://www.linkedin.com/in/thomas-coudert-phd-91b110193/" target="_blank" class="social-btn" aria-label="LinkedIn">
+            <img src="./assets/images/logo-linkedin.png" alt="LinkedIn">
+          </a>
+          <a href="https://github.com/ThomasCoudert" target="_blank" class="social-btn" aria-label="GitHub">
+            <img src="./assets/images/logo-github.png" alt="GitHub">
+          </a>
+          <a href="https://www.researchgate.net/profile/Thomas-Coudert-4" target="_blank" class="social-btn" aria-label="ResearchGate">
+            <img src="./assets/images/logo-RG.png" alt="ResearchGate">
+          </a>
+          <a href="https://scholar.google.com/citations?user=AKFU4gkAAAAJ&hl=fr&authuser=1&oi=ao" target="_blank" class="social-btn" aria-label="Google Scholar">
+            <img src="./assets/images/logo-GS.png" alt="Google Scholar">
+          </a>
+        </div>
+
+        <div class="profile-divider"></div>
+
+        <div class="brain-img">
+          <img src="./assets/images/mybrain_zoom.png" alt="Brain MRI" width="80">
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+      <!-- ========== ABOUT ========== -->
+      <section id="about" class="content-section">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-content">
+
+          <div class="center-image reveal">
+            <img src="./assets/images/mybrain.gif" alt="My Brain MRI" class="hero-img">
+            <span class="caption">"To understand me, start at slice 47."</span>
+          </div>
+
+          <p class="reveal">
+            I am a Postdoctoral Researcher working at the
+            <a href="https://www.uclahealth.org/locations/david-geffen-school-medicine-ucla">David Geffen School of Medicine at UCLA</a>
+            in Los Angeles, California, in the
+            <a href="https://cvirl.dgsom.ucla.edu/">Cardio Vascular Imaging Research Lab</a>
+            directed by Pr. Kim-Lien Nguyen.
+          </p>
+
+          <div class="center-image reveal">
+            <img src="./assets/images/ucla_campus.jpg" alt="UCLA campus" class="content-img" loading="lazy">
+          </div>
+
+          <p class="reveal">
+            I pursued my PhD research at the
+            <a href="https://neurosciences.univ-grenoble-alpes.fr/fr">Grenoble Institut Neurosciences</a>
+            in France, in the
+            <a href="https://linktr.ee/nifm_gin">Functional Neuroimaging and Brain Perfusion research team</a>
+            directed by Benjamin Lemasson and Thomas Christen.
+          </p>
+
+          <div class="center-image reveal">
+            <img src="./assets/images/Grenoble.jpg" alt="Grenoble" class="content-img" loading="lazy">
+          </div>
+
+          <p class="reveal">
+            Before my thesis, I worked as an intern under the supervision of
+            <a href="https://neurosciences.univ-grenoble-alpes.fr/fr/annuaire/m-michel-dojat-621497.kjsp">Michel Dojat</a> and
+            <a href="https://mistis.inrialpes.fr/people/forbes/">Florence Forbes</a>
+            on Transfer Learning for automatic segmentation of radiation-induced brain lesions in glioblastoma patients
+            in the case where the dataset contains a limited number of annotated MRIs.
+            This work also enabled me to work closely with the start-up
+            <a href="https://pixyl.ai/">Pixyl</a>,
+            in the research and development of their AI tools for MS lesion segmentation.
+          </p>
+
+          <p class="reveal">
+            Outside of work, I practice sports such as Brazilian jiu-jitsu (BJJ) and basketball.
+            I like to go beyond my limits and renew myself in what I do. I find these notions in contact sports
+            and satisfy my taste for teamwork through basketball.
+            I'm also a fan of science fiction novels which I've been reading more and more recently.
+            Finally, I love spending time with family, friends, or colleagues, having a drink, or enjoying an outdoor activity.
+          </p>
+
+        </div>
+      </section>
+
+      <!-- ========== PROJECTS ========== -->
+      <section id="projects" class="content-section">
+        <h2 class="section-title">Projects</h2>
+
+        <!-- Project 1 -->
+        <div class="project-card reveal">
+          <h3 class="project-card-title">Dynamic myocardial blood volume mapping with MR Multitasking</h3>
+          <p>
+            This project focuses on developing a fully motion-resolved framework for quantifying myocardial fractional
+            blood volume (fMBV) using MR Multitasking in conjunction with ferumoxytol, an intravascular contrast agent.
+            The Multitasking acquisition produces a highly undersampled dataset that is reconstructed through a low-rank
+            subspace model, yielding separate dimensions for cardiac motion, respiratory motion, and contrast-driven T1
+            dynamics. Within this latent space, motion-resolved T1 maps are generated across the entire cardiac cycle
+            and across multiple ferumoxytol doses. Subsequently, a compartmental model is fitted to the multi-dose T1
+            evolution to estimate fMBV and associated water-exchange parameters.
+          </p>
+          <p>
+            Central to this work are the stabilization of cross-dose and cross-phase alignment of data within the
+            subspace, and the construction of a pipeline capable of producing dynamic, physiologically interpretable
+            fMBV maps without reliance on ECG gating or breath-holding. This framework aims to improve the
+            characterization of myocardial microvascular function and provide a more robust approach to
+            contrast-enhanced quantitative cardiac MRI.
+          </p>
+          <div class="project-figure">
+            <img src="./assets/images/DynfMBV.gif" alt="Dynamic fMBV" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal">
+          <h3 class="project-card-title">Contrast-free multi-quantitative MRI with MR Fingerprinting</h3>
+          <p>
+            The concept of MRF proposes to reconstruct images by directly comparing in vivo acquisitions and millions
+            of digital simulations that mimic brain tissue (dictionary). This approach is flexible enough to allow
+            access to several MRI parameters simultaneously and to quantify them. As shown in clinical and preclinical
+            studies, when the simulations are based on the physics of NMR (magnetic field, magnetic susceptibility,
+            diffusion, relaxations, etc.) and on biophysics (cellular dimensions and vascular, flow ...), the technique
+            allows the extraction of information on tissue microstructures.
+          </p>
+          <p>
+            This project is centered on the development of a contrast-free MR Fingerprinting (MRF) framework for
+            rapid, multidimensional quantitative brain imaging in the context of cerebrovascular diseases. The method
+            relies on matching measured MRF signal evolutions to a comprehensive dictionary of simulations that
+            incorporate detailed NMR physics—including relaxation as well as realistic microvascular and cellular
+            architectural features. By generating high-fidelity digital phantoms of brain tissue and accelerating
+            large-scale reconstruction through advanced dictionary compression or physics-informed neural networks,
+            the project enabled the extraction of relaxation, perfusion, and oxygenation biomarkers without the need
+            for exogenous contrast agents.
+          </p>
+          <p>
+            This framework targets quantitative biomarkers for <u>acute stroke</u> and other neurovascular diseases
+            by linking the MRF signal evolution to underlying tissue microstructure and hemodynamics.
+          </p>
+          <div class="project-figure">
+            <img src="./assets/images/mrf.jpg" alt="Contrast-free MRF" loading="lazy">
+          </div>
+          <div class="related-papers">
+            <h4>Related Papers</h4>
+            <p class="paper-ref">
+              Coudert T et al. — Relaxometry and contrast-free cerebral microvascular quantification using balanced Steady-State Free Precession MR Fingerprinting
+              <a href="https://doi.org/10.1002/mrm.30434" target="_blank">(DOI: 10.1002/mrm.30434)</a>
+            </p>
+            <p class="paper-ref">
+              Coudert T &amp; Barrier A — MARVEL: MR Fingerprinting with Additional micRoVascular Estimates using Bidirectional LSTMs
+              <a href="https://doi.org/10.1007/978-3-031-72069-7_25" target="_blank">(DOI: 10.1007/978-3-031-72069-7_25)</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal">
+          <h3 class="project-card-title">MR-WAVES: MR simulations from 3D realistic microvascular networks using recurrent neural networks and histogram-based approximation</h3>
+          <p>
+            MR-WAVES is a computational framework designed to replace traditional Monte-Carlo spin-dynamics simulations
+            with a recurrent neural network model capable of predicting MR signal evolutions in realistic
+            three-dimensional microvascular geometries. Conventional simulations, while accurate, are computationally
+            intensive and limit the exploration of diverse sequence designs or microvascular configurations.
+            MR-WAVES leverages simulated datasets to train an RNN that learns the temporal evolution of magnetization
+            under varying gradient waveforms, structural geometries, and biophysical conditions. Once trained, the model
+            provides rapid and highly scalable signal predictions, enabling efficient sequence optimization and
+            facilitating large-scale studies on how microvascular architecture influences measurable MRI contrast.
+          </p>
+          <div class="project-figure">
+            <img src="./assets/images/mrwaves.jpg" alt="MR-WAVES" loading="lazy">
+          </div>
+          <div class="related-papers">
+            <h4>Related Papers</h4>
+            <p class="paper-ref">
+              Coudert T et al. — Fast MR signal simulations of microvascular and diffusion contributions using histogram-based approximation and recurrent neural networks
+              <a href="https://doi.org/10.1002/mrm.30629" target="_blank">(DOI: 10.1002/mrm.30629)</a>
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========== RESUME ========== -->
+      <section id="resume" class="content-section">
+        <h2 class="section-title">Resume</h2>
+
+        <!-- Experience -->
+        <div class="timeline-block reveal">
+          <div class="timeline-block-header">
+            <div class="timeline-icon"><ion-icon name="briefcase-outline"></ion-icon></div>
+            <h3>Experience</h3>
+          </div>
+          <div class="timeline-items">
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">
+                Postdoctoral Scholar –
+                <a href="https://www.uclahealth.org/locations/david-geffen-school-medicine-ucla" target="_blank">David Geffen School of Medicine at UCLA</a>
+              </h4>
+              <span class="timeline-date">2025 – present</span>
+              <p class="timeline-text">Cardiovascular Imaging Research Lab (CVIRL), Los Angeles, California.</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Research Engineer – Grenoble Institute Neurosciences (GIN), INSERM</h4>
+              <span class="timeline-date">2024</span>
+              <p class="timeline-text">MR simulations and MRI reconstruction framework developments.</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">
+                PhD in Physics for Life Sciences –
+                <a href="https://neurosciences.univ-grenoble-alpes.fr/grenoble-institut-des-neurosciences-gin-/grenoble-institut-des-neurosciences-gin-page-d-accueil-640462.kjsp" target="_blank">Grenoble Institute Neurosciences (GIN), INSERM</a>
+              </h4>
+              <span class="timeline-date">2021 – 2024</span>
+              <p class="timeline-text">MRI « fingerprinting » and Artificial Intelligence for the management of acute stroke patients.</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Master Internship – Grenoble Institute Neurosciences (GIN), INSERM</h4>
+              <span class="timeline-date">2021</span>
+              <p class="timeline-text">Research internship in quantitative MRI and machine learning methods at GIN.</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">
+                Master Internship – R&amp;D Engineer at
+                <a href="https://pixyl.ai/" target="_blank">Pixyl Medical</a>, France
+              </h4>
+              <span class="timeline-date">2021</span>
+              <p class="timeline-text">Participation in the R&amp;D development of the start-up Pixyl Medical. Deep-learning-based segmentation of multiple sclerosis lesions in brain MRI.</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">
+                Deep learning and machine learning project with
+                <a href="https://www.cea.fr/Pages/le-cea/les-centres-cea/grenoble.aspx" target="_blank">CEA Grenoble</a>, France
+              </h4>
+              <span class="timeline-date">2020 – 2021</span>
+              <p class="timeline-text">Collaborative project to develop a predictive model of J.H. Conway's Game of Life for biomedical purposes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="timeline-block reveal">
+          <div class="timeline-block-header">
+            <div class="timeline-icon"><ion-icon name="school-outline"></ion-icon></div>
+            <h3>Education</h3>
+          </div>
+          <div class="timeline-items">
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">
+                PhD in Physics for Life Sciences –
+                <a href="https://neurosciences.univ-grenoble-alpes.fr/grenoble-institut-des-neurosciences-gin-/grenoble-institut-des-neurosciences-gin-page-d-accueil-640462.kjsp" target="_blank">Grenoble Institute Neurosciences (GIN), INSERM</a>
+              </h4>
+              <span class="timeline-date">2021 – 2024</span>
+              <p class="timeline-text">MRI « fingerprinting » and Artificial Intelligence for the management of acute stroke patients.</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">
+                Master in Engineering –
+                <a href="https://phelma.grenoble-inp.fr/fr/formation/ingenieur-de-grenoble-inp-phelma-filiere-biomedical-engineering#page-presentation" target="_blank">Grenoble-INP Phelma</a>
+              </h4>
+              <span class="timeline-date">2018 – 2021</span>
+              <p class="timeline-text">3rd year: Biomedical Imaging. 2nd year: Biomedical Engineering. 1st year: Physics, Electronics, Telecom.</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Machine Learning and Deep Learning courses</h4>
+              <span class="timeline-date">2020</span>
+              <p class="timeline-text">Andrew Ng lectures, Stanford (Coursera certifications).</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">
+                Preparatory Class –
+                <a href="https://www.grenoble-inp.fr/fr/formation/un-autre-style-de-prepa" target="_blank">La Prépa des INP Grenoble</a>
+              </h4>
+              <span class="timeline-date">2016 – 2018</span>
+              <p class="timeline-text">Two years of intensive scientific courses to prepare for Engineering School.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teaching -->
+        <div class="timeline-block reveal">
+          <div class="timeline-block-header">
+            <div class="timeline-icon"><ion-icon name="people-outline"></ion-icon></div>
+            <h3>Teaching Experience</h3>
+          </div>
+          <div class="timeline-items">
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Undergraduate student supervision – Computer Sciences</h4>
+              <span class="timeline-date">2025</span>
+              <p class="timeline-text">Project: k-space inpainting with Denoising Diffusion Probabilistic Models.</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Graduate student supervision – Medical Imaging</h4>
+              <span class="timeline-date">2025</span>
+              <p class="timeline-text">Project: Advanced cardiovascular MR reconstruction.</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">3-month undergraduate student supervision – Biomedical Engineering</h4>
+              <span class="timeline-date">2024</span>
+              <p class="timeline-text">Project: Automated optimisation of MR vascular Fingerprinting bSSFP sequences.</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Course: Introduction to Python</h4>
+              <span class="timeline-date">2022</span>
+              <p class="timeline-text">Grenoble National Polytechnic Institute – Preparatory class.</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Practical class supervision: Introduction to PCR method</h4>
+              <span class="timeline-date">2022</span>
+              <p class="timeline-text">Grenoble National Polytechnic Institute – Preparatory class.</p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Practical session: Synthetic MRI Contrast Generation</h4>
+              <span class="timeline-date">2022</span>
+              <p class="timeline-text">AI4Health Winter School – January 14th, 2022.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Others -->
+        <div class="timeline-block reveal">
+          <div class="timeline-block-header">
+            <div class="timeline-icon"><ion-icon name="ribbon-outline"></ion-icon></div>
+            <h3>Awards, Skills &amp; More</h3>
+          </div>
+          <div class="timeline-items">
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Awards</h4>
+              <p class="timeline-text">
+                SCMR 2026 Early Career Award.<br>
+                IDRE 2025–2026 Fellowship.<br>
+                ISMRM 2025 Perfusion Study Group 1st Place Award, Contrast Enhanced Category (Primary Author).<br>
+                ISMRM 2025 Summa Cum Laude Merit Award (Co-primary author).<br>
+                ISMRM 2025 Magna Cum Laude Merit Award (Author).
+              </p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Certifications</h4>
+              <p class="timeline-text">
+                2025 – IDEA Sequence Programming, Siemens Healthineers.<br>
+                2025 – Fundamentals of Accelerated Computing with CUDA Python, NVIDIA.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Memberships &amp; Service</h4>
+              <p class="timeline-text">
+                2025–2026 – Fellow, Institute for Digital Research and Education (IDRE).<br>
+                Scientific junior committee – French Conference on AI in Biomedical Imaging (IABM 2023/2024).<br>
+                Member – ISMRM and SCMR.<br>
+                Board Member – NeuroDocs, Grenoble Institute Neurosciences.<br>
+                Journal reviewer – <em>Imaging Neuroscience</em>.<br>
+                Workshop organizer – AI4Health Winter School 2022 by Health Data Hub.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Computer Skills</h4>
+              <p class="timeline-text">
+                <u>Programming</u>: Python, MATLAB, HTML.<br>
+                <u>Software</u>: Microsoft Office; version control with GitHub and GitLab; ImageJ, ITK-SNAP.<br>
+                <u>Operating systems</u>: Linux, Ubuntu, Windows.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <h4 class="timeline-item-title">Languages</h4>
+              <p class="timeline-text">
+                French (native). English (C1 BULATS). German (B2). Italian (B1).
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========== PUBLICATIONS ========== -->
+      <section id="publications" class="content-section">
+        <h2 class="section-title">Publications</h2>
+
+        <div class="pub-external-links reveal">
+          <a href="https://www.researchgate.net/profile/Thomas-Coudert-4" target="_blank" class="pub-external-btn">
+            <img src="./assets/images/logo-RG.png" alt="ResearchGate">
+            ResearchGate
+          </a>
+          <a href="https://scholar.google.com/citations?user=AKFU4gkAAAAJ&hl=fr&authuser=1&oi=ao" target="_blank" class="pub-external-btn">
+            <img src="./assets/images/logo-GS.png" alt="Google Scholar">
+            Google Scholar
+          </a>
+        </div>
+
+        <!-- Journal Papers -->
+        <div class="pub-group reveal">
+          <div class="pub-group-header">
+            <div class="timeline-icon"><ion-icon name="document-text-outline"></ion-icon></div>
+            <h3>Selected Publications</h3>
+          </div>
+          <ul class="pub-list">
+
+            <li class="pub-item">
+              <span class="pub-year">2025</span>
+              <p class="pub-title">
+                Fast MR signal simulations of microvascular and diffusion contributions using histogram-based approximation and recurrent neural networks
+                <a href="https://doi.org/10.1002/mrm.30629" target="_blank">(DOI)</a>
+              </p>
+              <p class="pub-authors"><u>Thomas Coudert</u>, Maitê Marcal, Aurélien Delphin, Antoine Barrier, Lila Cunge, Loïc Legris, Jan M. Warnking, Benjamin Lemasson, Emmanuel L. Barbier, Thomas Christen</p>
+              <p class="pub-journal">Magnetic Resonance in Medicine</p>
+            </li>
+
+            <li class="pub-item">
+              <span class="pub-year">2025</span>
+              <p class="pub-title">
+                MR Fingerprinting for Imaging Brain Hemodynamics and Oxygenation
+                <a href="https://doi.org/10.1002/jmri.29812" target="_blank">(DOI)</a>
+              </p>
+              <p class="pub-authors"><u>Thomas Coudert</u>, Aurelien Delphin, Antoine Barrier, Emmanuel L Barbier, Benjamin Lemasson, Jan M Warnking, Thomas Christen</p>
+              <p class="pub-journal">Journal of Magnetic Resonance Imaging</p>
+            </li>
+
+            <li class="pub-item">
+              <span class="pub-year">2025</span>
+              <p class="pub-title">
+                Relaxometry and contrast-free cerebral microvascular quantification using balanced Steady-State Free Precession MR Fingerprinting
+                <a href="https://doi.org/10.1002/mrm.30434" target="_blank">(DOI)</a>
+              </p>
+              <p class="pub-authors"><u>Thomas Coudert</u>, Aurélien Delphin, Antoine Barrier, Loïc Legris, Jan M. Warnking, Laurent Lamalle, Mariya Doneva, Benjamin Lemasson, Emmanuel L. Barbier, Thomas Christen</p>
+              <p class="pub-journal">Magnetic Resonance in Medicine</p>
+            </li>
+
+            <li class="pub-item">
+              <span class="pub-year">2024</span>
+              <p class="pub-title">
+                Enhancing MR vascular Fingerprinting with realistic microvascular geometries
+                <a href="https://doi.org/10.1162/imag_a_00377" target="_blank">(DOI)</a>
+              </p>
+              <p class="pub-authors">Aurélien Delphin, Fabien Boux, Clément Brossard, <u>Thomas Coudert</u>, Jan M Warnking, Benjamin Lemasson, Emmanuel Luc Barbier, Thomas Christen</p>
+              <p class="pub-journal">Imaging Neuroscience</p>
+            </li>
+
+            <li class="pub-item">
+              <span class="pub-year">2024</span>
+              <p class="pub-title">
+                MARVEL: MR Fingerprinting with Additional micRoVascular Estimates using Bidirectional LSTMs
+                <a href="https://doi.org/10.1007/978-3-031-72069-7_25" target="_blank">(DOI)</a>
+              </p>
+              <p class="pub-authors"><u>Thomas Coudert</u>, Antoine Barrier, Aurélien Delphin, Benjamin Lemasson, Thomas Christen</p>
+              <p class="pub-journal">MICCAI 2024 – Lecture Notes in Computer Science, vol 15002, Springer</p>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Conference Papers -->
+        <div class="pub-group reveal">
+          <div class="pub-group-header">
+            <div class="timeline-icon"><ion-icon name="mic-outline"></ion-icon></div>
+            <h3>Selected Conference Papers</h3>
+          </div>
+          <ul class="pub-list">
+
+            <li class="pub-item">
+              <span class="pub-year">2026</span>
+              <p class="pub-title">Dynamic Fractional Myocardial Blood Volume Mapping Using Ferumoxytol-Enhanced MR Multitasking</p>
+              <p class="pub-authors"><u>Thomas Coudert</u>, Mostafa Mahmoudi, Arutyun Pogosyan, Zhengyang Ming, Hsu-Lei Lee, J Paul Finn, Anthony G Christodoulou, Kim-Lien Nguyen</p>
+              <p class="pub-journal">SCMR, Rio de Janeiro</p>
+              <span class="pub-award">Early Career Award</span>
+            </li>
+
+            <li class="pub-item">
+              <span class="pub-year">2025</span>
+              <p class="pub-title">Advanced MR vascular Fingerprinting</p>
+              <p class="pub-authors">Maitê Marcal, <u>Thomas Coudert</u>, Aurélien Delphin, Antoine Barrier, Emmanuel L. Barbier, Benjamin Lemasson, Thomas Christen</p>
+              <p class="pub-journal">ISMRM, Honolulu (Oral)</p>
+              <span class="pub-award">Summa Cum Laude Merit Award</span>
+            </li>
+
+            <li class="pub-item">
+              <span class="pub-year">2025</span>
+              <p class="pub-title">MR-WAVES: MR simulations from 3D realistic microvascular networks in a few seconds</p>
+              <p class="pub-authors"><u>Thomas Coudert</u>, Aurélien Delphin, Maitê Marcal, Antoine Barrier, Benjamin Lemasson, Emmanuel L. Barbier, Thomas Christen</p>
+              <p class="pub-journal">ISMRM, Honolulu (Poster)</p>
+            </li>
+
+            <li class="pub-item">
+              <span class="pub-year">2025</span>
+              <p class="pub-title">Robust Subspace Clustering Approach for High-Dimensional MRF: Novel Simultaneous Clustering and Dimensionality Reduction at Scale</p>
+              <p class="pub-authors">Geoffroy Oudoumanessah, <u>Thomas Coudert</u>, Antoine Barrier, Aurélien Delphin, Carole Laritzien, Michel Dojat, Emmanuel L. Barbier, Thomas Christen, Florence Forbes</p>
+              <p class="pub-journal">ISMRM, Honolulu (Poster)</p>
+            </li>
+
+            <li class="pub-item">
+              <span class="pub-year">2025</span>
+              <p class="pub-title">
+                Cluster Globally, Reduce Locally: Scalable Efficient Dictionary Compression for Magnetic Resonance Fingerprinting
+                <a href="https://doi.org/10.1109/ISBI60581.2025.10981146" target="_blank">(DOI)</a>
+              </p>
+              <p class="pub-authors">Geoffroy Oudoumanessah, <u>Thomas Coudert</u>, Luc Meyer, Aurélien Delphin, Thomas Christen, Michel Dojat, Carole Lartizien, Florence Forbes</p>
+              <p class="pub-journal">ISBI IEEE 2025</p>
+            </li>
+
+            <li class="pub-item">
+              <span class="pub-year">2024</span>
+              <p class="pub-title">Contrast-free Blood Volume, Microvascular Properties and Relaxometry mapping using bSSFP MR Fingerprinting</p>
+              <p class="pub-authors"><u>Thomas Coudert</u>, Aurélien Delphin, Loïc Legris, Antoine Barrier, Jan M. Warnking, David Chechin, Laurent Lamalle, Peter Mazurkewitz, Peter Koken, Emmanuel L. Barbier, Mariya Doneva, Thomas Christen</p>
+              <p class="pub-journal">ISMRM, Singapore (Power Pitch oral)</p>
+            </li>
+
+            <li class="pub-item">
+              <span class="pub-year">2023</span>
+              <p class="pub-title">MR Vascular Fingerprinting with 3D realistic blood vessel structures and machine learning to assess oxygenation changes in human volunteers</p>
+              <p class="pub-authors">Aurélien Delphin, <u>Thomas Coudert</u>, Audrey Fan, Michael E Moseley, Greg Zaharchuk, Thomas Christen</p>
+              <p class="pub-journal">ISMRM, Toronto (Poster)</p>
+            </li>
+
+            <li class="pub-item">
+              <span class="pub-year">2022</span>
+              <p class="pub-title">Searching for an MR Fingerprinting sequence to measure brain oxygenation without contrast agent</p>
+              <p class="pub-authors"><u>Thomas Coudert</u>, Aurelien Delphin, Jan Warnking, Benjamin Lemasson, Emmanuel L Barbier, Thomas Christen</p>
+              <p class="pub-journal">ISMRM, London (Poster)</p>
+            </li>
+
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- ========== CONTACT ========== -->
+      <section id="contact" class="content-section">
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-grid reveal">
+          <a href="mailto:tcoudert@mednet.ucla.edu" class="contact-card">
+            <div class="contact-card-icon"><ion-icon name="mail-outline"></ion-icon></div>
+            <div class="contact-card-info">
+              <h4>Email</h4>
+              <a href="mailto:tcoudert@mednet.ucla.edu">tcoudert@mednet.ucla.edu</a>
+            </div>
+          </a>
+          <div class="contact-card">
+            <div class="contact-card-icon"><ion-icon name="location-outline"></ion-icon></div>
+            <div class="contact-card-info">
+              <h4>Location</h4>
+              <p>Los Angeles, CA, USA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-grid reveal">
+          <a href="https://twitter.com/Thomas__Coudert" target="_blank" class="social-card">
+            <img src="./assets/images/logo-X.png" alt="X"> Twitter / X
+          </a>
+          <a href="https://www.linkedin.com/in/thomas-coudert-phd-91b110193/" target="_blank" class="social-card">
+            <img src="./assets/images/logo-linkedin.png" alt="LinkedIn"> LinkedIn
+          </a>
+          <a href="https://github.com/ThomasCoudert" target="_blank" class="social-card">
+            <img src="./assets/images/logo-github.png" alt="GitHub"> GitHub
+          </a>
+          <a href="https://www.researchgate.net/profile/Thomas-Coudert-4" target="_blank" class="social-card">
+            <img src="./assets/images/logo-RG.png" alt="ResearchGate"> ResearchGate
+          </a>
+          <a href="https://scholar.google.com/citations?user=AKFU4gkAAAAJ&hl=fr&authuser=1&oi=ao" target="_blank" class="social-card">
+            <img src="./assets/images/logo-GS.png" alt="Google Scholar"> Google Scholar
+          </a>
+        </div>
+
+      </section>
+
     </main>
+  </div>
 
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-
-
-
-
-    <!--
-      - custom js link
-    -->
-    <script src="./assets/js/script.js"></script>
-
-    <!--
-      - ionicon link
-    -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
-    <script>
-  const toggle = document.getElementById('themeToggle');
-  const saved = localStorage.getItem('theme');
-  if (saved === 'dark') { document.body.classList.add('dark'); toggle.textContent = '☀️'; }
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    const isDark = document.body.classList.contains('dark');
-    toggle.textContent = isDark ? '☀️' : '🌙';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
-</script>
 </body>
-
 </html>
