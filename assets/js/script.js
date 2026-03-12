@@ -49,6 +49,30 @@ if (mobileMenuBtn && mobileNav) {
   });
 }
 
+// === ROLLING TITLE ===
+const rollingTitles = [
+  'Postdoctoral Researcher',
+  'MR Scientist',
+  'Medical Imaging Engineer',
+  'AI Scientist',
+];
+const rollingEl = document.getElementById('rollingTitle');
+if (rollingEl) {
+  let idx = 0;
+  setInterval(() => {
+    rollingEl.classList.add('fade-out');
+    setTimeout(() => {
+      idx = (idx + 1) % rollingTitles.length;
+      rollingEl.textContent = rollingTitles[idx];
+      rollingEl.classList.remove('fade-out');
+      rollingEl.classList.add('fade-in');
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        rollingEl.classList.remove('fade-in');
+      }));
+    }, 350);
+  }, 2800);
+}
+
 // === SCROLL SPY: update active nav link as sections scroll into view ===
 const sections = document.querySelectorAll('.content-section[id]');
 const navLinks = document.querySelectorAll('.nav-link[data-section]');

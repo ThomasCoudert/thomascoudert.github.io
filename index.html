@@ -23,13 +23,13 @@
   <!-- ===== TOP NAV ===== -->
   <header class="top-nav" id="topNav">
     <div class="nav-inner">
-      <a href="#about" class="nav-brand">Thomas Coudert</a>
+      <a href="#projects" class="nav-brand">Thomas Coudert</a>
       <nav>
         <ul class="nav-list">
-          <li><a href="#about"        class="nav-link active" data-section="about">About</a></li>
-          <li><a href="#projects"     class="nav-link"        data-section="projects">Projects</a></li>
+          <li><a href="#projects"     class="nav-link active" data-section="projects">Projects</a></li>
           <li><a href="#resume"       class="nav-link"        data-section="resume">Resume</a></li>
           <li><a href="#publications" class="nav-link"        data-section="publications">Publications</a></li>
+          <li><a href="#about"        class="nav-link"        data-section="about">About</a></li>
           <li><a href="#contact"      class="nav-link"        data-section="contact">Contact</a></li>
         </ul>
       </nav>
@@ -45,10 +45,10 @@
   <!-- Mobile nav dropdown -->
   <div class="mobile-nav" id="mobileNav">
     <ul>
-      <li><a href="#about"        class="mobile-nav-link">About</a></li>
       <li><a href="#projects"     class="mobile-nav-link">Projects</a></li>
       <li><a href="#resume"       class="mobile-nav-link">Resume</a></li>
       <li><a href="#publications" class="mobile-nav-link">Publications</a></li>
+      <li><a href="#about"        class="mobile-nav-link">About</a></li>
       <li><a href="#contact"      class="mobile-nav-link">Contact</a></li>
     </ul>
   </div>
@@ -58,15 +58,28 @@
 
     <!-- ===== PROFILE HEADER ===== -->
     <div class="profile-header">
-      <img src="./assets/images/depaulis.jpg" alt="Thomas Coudert" class="profile-avatar">
+
+      <!-- Auto-flipping image: front = profile photo, back = brain MRI -->
+      <div class="flip-card" id="profileFlip" aria-label="Profile photo / Brain MRI">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="./assets/images/depaulis.jpg" alt="Thomas Coudert">
+          </div>
+          <div class="flip-card-back">
+            <img src="./assets/images/mybrain_zoom.png" alt="Brain MRI">
+          </div>
+        </div>
+      </div>
 
       <div class="profile-body">
-        <div class="profile-top">
-          <div>
-            <h1 class="profile-name">Thomas Coudert</h1>
-            <span class="profile-title-badge">Postdoctoral Researcher, UCLA</span>
-          </div>
-          <img src="./assets/images/mybrain_zoom.png" alt="Brain MRI" class="profile-brain">
+
+        <div class="profile-identity">
+          <h1 class="profile-name">Thomas Coudert</h1>
+          <p class="profile-role"><span id="rollingTitle">Postdoctoral Researcher</span></p>
+          <p class="profile-institution">
+            <span class="ucla-wordmark">UCLA</span><span class="ucla-health-word"> Health</span><span class="profile-dept">&nbsp;&middot;&nbsp;David Geffen School of Medicine</span>
+          </p>
+          <p class="profile-bio">Developing quantitative MRI methods for cardiac and brain microvasculature, combining physics-based modelling and AI to map perfusion, oxygenation, and tissue microstructure.</p>
         </div>
 
         <div class="profile-meta">
@@ -78,85 +91,64 @@
           </span>
         </div>
 
-        <div class="profile-socials">
-          <a href="https://twitter.com/Thomas__Coudert" target="_blank" class="social-btn" aria-label="Twitter/X">
-            <img src="./assets/images/logo-X.png" alt="X">
-          </a>
-          <a href="https://www.linkedin.com/in/thomas-coudert-phd-91b110193/" target="_blank" class="social-btn" aria-label="LinkedIn">
-            <img src="./assets/images/logo-linkedin.png" alt="LinkedIn">
-          </a>
-          <a href="https://github.com/ThomasCoudert" target="_blank" class="social-btn" aria-label="GitHub">
-            <img src="./assets/images/logo-github.png" alt="GitHub">
-          </a>
-          <a href="https://www.researchgate.net/profile/Thomas-Coudert-4" target="_blank" class="social-btn" aria-label="ResearchGate">
-            <img src="./assets/images/logo-RG.png" alt="ResearchGate">
-          </a>
-          <a href="https://scholar.google.com/citations?user=AKFU4gkAAAAJ&hl=fr&authuser=1&oi=ao" target="_blank" class="social-btn" aria-label="Google Scholar">
-            <img src="./assets/images/logo-GS.png" alt="Google Scholar">
-          </a>
-        </div>
       </div>
+    </div>
+
+    <!-- ===== NEWS PANEL ===== -->
+    <div class="news-panel">
+      <div class="news-panel-header">
+        <span class="news-live-dot"></span>
+        <span class="news-panel-label">Latest Updates</span>
+      </div>
+      <ul class="news-list">
+
+        <li class="news-item news-item-latest">
+          <span class="news-date">Feb 2026</span>
+          <div class="news-body">
+            <span class="news-badge news-badge-award">Award</span>
+            <span class="news-text">Received the <strong>Society of Cardiovascular Magnetic Resonance - Early Career Award</strong> at the 29th SCMR Annual Scientific Sessions in Rio de Janeiro, Brazil.</span>
+            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7426671377920901120/" target="_blank" rel="noopener" class="news-link">See post →</a>
+          </div>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">Jan 2026</span>
+          <div class="news-body">
+            <span class="news-badge news-badge-poster">Poster · ISMRM 2026</span>
+            <span class="news-text">Abstract accepted as <strong>Digital Poster</strong> at ISMRM 2026 — <em>Diffusion-based k-space inpainting for improved 5D free-running CMR reconstruction</em> (Wed. May 13, 2:40 PM).</span>
+          </div>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">Jan 2026</span>
+          <div class="news-body">
+            <span class="news-badge news-badge-talk">Oral · ISMRM 2026</span>
+            <span class="news-text">Abstract accepted as <strong>Oral presentation</strong> at ISMRM 2026 — <em>Dynamic Fractional Myocardial Blood Volume Mapping Using MR Multitasking with Latent-Space Dose Harmonization</em> (Wed. May 13, 4 PM).</span>
+          </div>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">Dec 2025</span>
+          <div class="news-body">
+            <span class="news-badge news-badge-talk">Oral · SCMR 2026</span>
+            <span class="news-text">Abstract selected for an <strong>in-person oral presentation in the ECA Translational session</strong> at the 29th SCMR Annual Scientific Sessions, Rio de Janeiro — <em>Dynamic Fractional Myocardial Blood Volume Mapping Using Ferumoxytol-Enhanced MR Multitasking</em>.</span>
+          </div>
+        </li>
+
+        <li class="news-item">
+          <span class="news-date">Jul 2025</span>
+          <div class="news-body">
+            <span class="news-badge news-badge-fellowship">Fellowship</span>
+            <span class="news-text">Awarded the <strong>IDRE Fellowship 2025–2026</strong> from UCLA's Institute for Digital Research and Education.</span>
+            <a href="https://idre.ucla.edu/featured/2025-2026-idre-fellows-announced" target="_blank" rel="noopener" class="news-link">See announcement →</a>
+          </div>
+        </li>
+
+      </ul>
     </div>
 
     <!-- ===== CONTENT SECTIONS ===== -->
     <main class="main-content">
-
-      <!-- ========== ABOUT ========== -->
-      <section id="about" class="content-section">
-        <h2 class="section-title">About Me</h2>
-
-        <div class="about-content">
-
-          <div class="center-image reveal">
-            <img src="./assets/images/mybrain.gif" alt="My Brain MRI" class="hero-img">
-            <span class="caption">"To understand me, start at slice 47."</span>
-          </div>
-
-          <p class="reveal">
-            I am a Postdoctoral Researcher working at the
-            <a href="https://www.uclahealth.org/locations/david-geffen-school-medicine-ucla">David Geffen School of Medicine at UCLA</a>
-            in Los Angeles, California, in the
-            <a href="https://cvirl.dgsom.ucla.edu/">Cardio Vascular Imaging Research Lab</a>
-            directed by Pr. Kim-Lien Nguyen.
-          </p>
-
-          <div class="center-image reveal">
-            <img src="./assets/images/ucla_campus.jpg" alt="UCLA campus" class="content-img" loading="lazy">
-          </div>
-
-          <p class="reveal">
-            I pursued my PhD research at the
-            <a href="https://neurosciences.univ-grenoble-alpes.fr/fr">Grenoble Institut Neurosciences</a>
-            in France, in the
-            <a href="https://linktr.ee/nifm_gin">Functional Neuroimaging and Brain Perfusion research team</a>
-            directed by Benjamin Lemasson and Thomas Christen.
-          </p>
-
-          <div class="center-image reveal">
-            <img src="./assets/images/Grenoble.jpg" alt="Grenoble" class="content-img" loading="lazy">
-          </div>
-
-          <p class="reveal">
-            Before my thesis, I worked as an intern under the supervision of
-            <a href="https://neurosciences.univ-grenoble-alpes.fr/fr/annuaire/m-michel-dojat-621497.kjsp">Michel Dojat</a> and
-            <a href="https://mistis.inrialpes.fr/people/forbes/">Florence Forbes</a>
-            on Transfer Learning for automatic segmentation of radiation-induced brain lesions in glioblastoma patients
-            in the case where the dataset contains a limited number of annotated MRIs.
-            This work also enabled me to work closely with the start-up
-            <a href="https://pixyl.ai/">Pixyl</a>,
-            in the research and development of their AI tools for MS lesion segmentation.
-          </p>
-
-          <p class="reveal">
-            Outside of work, I practice sports such as Brazilian jiu-jitsu (BJJ) and basketball.
-            I like to go beyond my limits and renew myself in what I do. I find these notions in contact sports
-            and satisfy my taste for teamwork through basketball.
-            I'm also a fan of science fiction novels which I've been reading more and more recently.
-            Finally, I love spending time with family, friends, or colleagues, having a drink, or enjoying an outdoor activity.
-          </p>
-
-        </div>
-      </section>
 
       <!-- ========== PROJECTS ========== -->
       <section id="projects" class="content-section">
@@ -593,6 +585,63 @@
 
       </section>
 
+      <!-- ========== ABOUT ========== -->
+      <section id="about" class="content-section">
+        <h2 class="section-title">More about me</h2>
+
+        <div class="about-content">
+
+          <div class="center-image reveal">
+            <img src="./assets/images/mybrain.gif" alt="My Brain MRI" class="hero-img">
+            <span class="caption">"To understand me, start at slice 47."</span>
+          </div>
+
+          <p class="reveal">
+            I am a Postdoctoral Researcher working at the
+            <a href="https://www.uclahealth.org/locations/david-geffen-school-medicine-ucla">David Geffen School of Medicine at UCLA</a>
+            in Los Angeles, California, in the
+            <a href="https://cvirl.dgsom.ucla.edu/">Cardio Vascular Imaging Research Lab</a>
+            directed by Pr. Kim-Lien Nguyen.
+          </p>
+
+          <div class="center-image reveal">
+            <img src="./assets/images/ucla_campus.jpg" alt="UCLA campus" class="content-img" loading="lazy">
+          </div>
+
+          <p class="reveal">
+            I pursued my PhD research at the
+            <a href="https://neurosciences.univ-grenoble-alpes.fr/fr">Grenoble Institut Neurosciences</a>
+            in France, in the
+            <a href="https://linktr.ee/nifm_gin">Functional Neuroimaging and Brain Perfusion research team</a>
+            directed by Benjamin Lemasson and Thomas Christen.
+          </p>
+
+          <div class="center-image reveal">
+            <img src="./assets/images/Grenoble.jpg" alt="Grenoble" class="content-img" loading="lazy">
+          </div>
+
+          <p class="reveal">
+            Before my thesis, I worked as an intern under the supervision of
+            <a href="https://neurosciences.univ-grenoble-alpes.fr/fr/annuaire/m-michel-dojat-621497.kjsp">Michel Dojat</a> and
+            <a href="https://mistis.inrialpes.fr/people/forbes/">Florence Forbes</a>
+            on Transfer Learning for automatic segmentation of radiation-induced brain lesions in glioblastoma patients
+            in the case where the dataset contains a limited number of annotated MRIs.
+            This work also enabled me to work closely with the start-up
+            <a href="https://pixyl.ai/">Pixyl</a>,
+            in the research and development of their AI tools for MS lesion segmentation.
+          </p>
+
+          <p class="reveal">
+            Outside of work, I practice sports such as Brazilian jiu-jitsu (BJJ) and basketball.
+            I like to go beyond my limits and renew myself in what I do. I find these notions in contact sports
+            and satisfy my taste for teamwork through basketball.
+            I'm also a fan of science fiction novels which I've been reading more and more recently.
+            Finally, I love spending time with family, friends, or colleagues, having a drink, or enjoying an outdoor activity.
+          </p>
+
+        </div>
+      </section>
+
       <!-- ========== CONTACT ========== -->
       <section id="contact" class="content-section">
         <h2 class="section-title">Contact</h2>
@@ -602,7 +651,7 @@
             <div class="contact-card-icon"><ion-icon name="mail-outline"></ion-icon></div>
             <div class="contact-card-info">
               <h4>Email</h4>
-              <a href="mailto:tcoudert@mednet.ucla.edu">tcoudert@mednet.ucla.edu</a>
+              <p>tcoudert@mednet.ucla.edu</p>
             </div>
           </a>
           <div class="contact-card">
@@ -636,6 +685,30 @@
 
     </main>
   </div>
+
+  <!-- ===== FIXED SOCIAL SIDEBAR ===== -->
+  <aside class="social-sidebar" aria-label="Social links">
+    <a href="https://www.linkedin.com/in/thomas-coudert-phd-91b110193/" target="_blank" rel="noopener noreferrer" class="sidebar-social-btn" aria-label="LinkedIn">
+      <img src="./assets/images/logo-linkedin.png" alt="LinkedIn">
+      <span class="sidebar-tooltip">LinkedIn</span>
+    </a>
+    <a href="https://twitter.com/Thomas__Coudert" target="_blank" rel="noopener noreferrer" class="sidebar-social-btn" aria-label="Twitter / X">
+      <img src="./assets/images/logo-X.png" alt="Twitter/X">
+      <span class="sidebar-tooltip">Twitter / X</span>
+    </a>
+    <a href="https://github.com/ThomasCoudert" target="_blank" rel="noopener noreferrer" class="sidebar-social-btn" aria-label="GitHub">
+      <img src="./assets/images/logo-github.png" alt="GitHub">
+      <span class="sidebar-tooltip">GitHub</span>
+    </a>
+    <a href="https://www.researchgate.net/profile/Thomas-Coudert-4" target="_blank" rel="noopener noreferrer" class="sidebar-social-btn" aria-label="ResearchGate">
+      <img src="./assets/images/logo-RG.png" alt="ResearchGate">
+      <span class="sidebar-tooltip">ResearchGate</span>
+    </a>
+    <a href="https://scholar.google.com/citations?user=AKFU4gkAAAAJ&hl=fr&authuser=1&oi=ao" target="_blank" rel="noopener noreferrer" class="sidebar-social-btn" aria-label="Google Scholar">
+      <img src="./assets/images/logo-GS.png" alt="Google Scholar">
+      <span class="sidebar-tooltip">Google Scholar</span>
+    </a>
+  </aside>
 
   <script src="./assets/js/script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
