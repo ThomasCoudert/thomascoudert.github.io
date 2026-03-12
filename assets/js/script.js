@@ -1,5 +1,10 @@
 'use strict';
 
+// Clear old theme key from previous site version to avoid stale dark mode
+if (localStorage.getItem('theme') !== null && localStorage.getItem('tc-theme') === null) {
+  localStorage.removeItem('theme');
+}
+
 // === THEME TOGGLE ===
 const themeBtn = document.getElementById('themeToggle');
 const themeIcon = themeBtn ? themeBtn.querySelector('.theme-icon') : null;
@@ -9,14 +14,15 @@ function applyTheme(dark) {
   if (themeIcon) themeIcon.textContent = dark ? '☀️' : '🌙';
 }
 
-const savedTheme = localStorage.getItem('theme');
+// Use a new key 'tc-theme' to avoid inheriting old site's saved dark preference
+const savedTheme = localStorage.getItem('tc-theme');
 applyTheme(savedTheme === 'dark');
 
 if (themeBtn) {
   themeBtn.addEventListener('click', () => {
     const isDark = document.body.classList.toggle('dark');
     if (themeIcon) themeIcon.textContent = isDark ? '☀️' : '🌙';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    localStorage.setItem('tc-theme', isDark ? 'dark' : 'light');
   });
 }
 
