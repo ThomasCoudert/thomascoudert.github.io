@@ -903,15 +903,23 @@ body.dark .pub-award { color: #fbbf24; background: rgba(251,191,36,0.15); }
 
 /* Lightbox */
 .lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(0, 0, 0, 0.85);
+  display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.85);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 }
-.lightbox.active { display: flex; }
+.lightbox.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
 .lightbox img {
   max-width: 90vw;
   max-height: 90vh;
