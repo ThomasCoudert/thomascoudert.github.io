@@ -784,7 +784,34 @@
     </a>
   </aside>
 
+  <!-- Lightbox overlay -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
   <script src="./assets/js/script.js"></script>
+  <script>
+    (function () {
+      const lb    = document.getElementById('lightbox');
+      const img   = document.getElementById('lightboxImg');
+      const close = document.getElementById('lightboxClose');
+
+      document.querySelectorAll('.project-figure img').forEach(function (el) {
+        el.style.cursor = 'zoom-in';
+        el.addEventListener('click', function () {
+          img.src = el.src;
+          img.alt = el.alt;
+          lb.classList.add('active');
+        });
+      });
+
+      function closeLb() { lb.classList.remove('active'); img.src = ''; }
+      close.addEventListener('click', closeLb);
+      lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+    })();
+  </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
