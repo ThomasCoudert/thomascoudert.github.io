@@ -642,7 +642,7 @@ body.dark .news-badge-poster     { background: rgba(167,139,250,0.15); color: #a
   margin: 0 auto;
   display: block;
   box-shadow: var(--shadow-md);
-  max-width: 100%;
+  max-width: 50%;
 }
 
 .related-papers { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
