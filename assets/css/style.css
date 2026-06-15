@@ -545,14 +545,16 @@ body.dark .news-badge-talk       { background: var(--accent-light);    color: va
 body.dark .news-badge-poster     { background: rgba(167,139,250,0.15); color: #a78bfa; }
 
 .news-thumb {
-  flex: 0 0 auto;
+  flex: 0 0 70px;
   width: 70px;
+  max-width: 70px;
   height: 70px;
   object-fit: cover;
   object-position: top center;
   border-radius: var(--r-lg);
   box-shadow: var(--shadow-md);
   align-self: center;
+  display: block;
 }
 
 /* =====================
