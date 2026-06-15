@@ -544,6 +544,17 @@ body.dark .news-badge-fellowship { background: rgba(52,211,153,0.15);  color: #3
 body.dark .news-badge-talk       { background: var(--accent-light);    color: var(--accent); }
 body.dark .news-badge-poster     { background: rgba(167,139,250,0.15); color: #a78bfa; }
 
+.news-thumb {
+  flex: 0 0 auto;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+  align-self: center;
+}
+
 /* =====================
    MAIN CONTENT
    ===================== */
