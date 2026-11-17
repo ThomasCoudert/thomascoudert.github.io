@@ -538,11 +538,13 @@ body.dark .ucla-health-word { color: #5ba3d9; }
 .news-badge-fellowship { background: #d1fae5; color: #065f46; }
 .news-badge-talk     { background: var(--accent-light); color: var(--accent); }
 .news-badge-poster   { background: #f0ebff; color: #6d28d9; }
+.news-badge-paper   { background: #f0ebff; color: #be123c; }
 
 body.dark .news-badge-award      { background: rgba(251,191,36,0.15);  color: #fbbf24; }
 body.dark .news-badge-fellowship { background: rgba(52,211,153,0.15);  color: #34d399; }
 body.dark .news-badge-talk       { background: var(--accent-light);    color: var(--accent); }
 body.dark .news-badge-poster     { background: rgba(167,139,250,0.15); color: #a78bfa; }
+body.dark .news-badge-paper { background: rgba(251,113,133,0.15); color: #fb7185; }
 
 .news-thumb {
   flex: 0 0 70px;
